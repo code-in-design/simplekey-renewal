@@ -130,7 +130,7 @@
                 <span class="text-brand font-bold text-sm">대표님의 '개인기'로 버티는 성장, 이제는 한계가 오지 않으셨나요?</span>
             </div>
             <h1
-                class="text-5xl md:text-7xl font-black leading-[1.1] mb-8 text-dark-soft tracking-tight animate-fade-in-up delay-100">
+                class="text-5xl md:text-7xl font-black leading-relaxed mb-8 text-dark-soft tracking-tight animate-fade-in-up delay-100">
                 대표가 위임을 못해서<br>
                 <span class="text-brand">새벽까지</span> 일하시나요?
             </h1>
@@ -158,7 +158,7 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="mb-16">
                 <span class="text-brand font-bold tracking-widest uppercase text-sm">Check List</span>
-                <h2 class="text-4xl md:text-5xl font-black mt-4 text-dark leading-tight">
+                <h2 class="text-4xl md:text-5xl font-black mt-4 text-dark leading-normal">
                     이런 고민이 있다면<br>
                     <span class="text-brand">위험신호</span>입니다
                 </h2>
@@ -327,7 +327,7 @@
             <div class="text-center mb-20">
                 <span
                     class="text-brand font-bold tracking-[0.2em] uppercase text-sm bg-brand/10 px-4 py-1.5 rounded-full border border-brand/20">Review</span>
-                <h2 class="text-4xl md:text-5xl font-black mt-8 leading-tight">
+                <h2 class="text-4xl md:text-5xl font-black mt-8 leading-normal">
                     실제 컨설팅을 받은<br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-brand">대표님들의 진짜
                         이야기</span>
@@ -459,19 +459,40 @@
                             class="absolute bottom-1 left-0 w-full h-2 bg-brand/10 -z-10"></span></span>이 새고 있습니다
                 </h2>
             </div>
-            <p class="mt-6 text-xl text-gray-600 font-medium">바로 <strong class="text-dark text-2xl">'시스템'</strong>이 없기
+            <p class="mt-6 text-2xl text-gray-600 font-medium mb-24">바로 <strong
+                    class="text-dark text-3xl">'시스템'</strong>이 없기
                 때문입니다.</p>
 
-            <div
-                class="bg-white p-10 rounded-[2rem] shadow-xl border border-gray-100 text-center mb-12 transform hover:-translate-y-1 transition-transform duration-300">
-                <p class="text-gray-500 text-sm mb-4 font-medium tracking-wide">시스템 부재로 인한 기회비용</p>
-                <h3 class="text-3xl md:text-5xl font-black text-dark mb-2">
-                    하루 2시간 <span class="text-gray-300 text-3xl">×</span> 365일 <span
-                        class="text-gray-300 text-3xl">=</span>
-                    <span class="text-brand">매년 730시간 낭비</span>
-                </h3>
-                <p class="text-gray-500 mt-4 text-lg">평생 사업에 끌려다니며, <br class="md:hidden">다음 단계로 확장할 기회를 놓치게 됩니다.</p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 relative z-10 mb-16">
+                <!-- Item 1 -->
+                <div class="text-center">
+                    <p class="text-gray-400 text-sm md:text-base mb-2 font-medium">매일 낭비되는 시간</p>
+                    <h3 class="text-4xl md:text-6xl font-black text-dark tracking-tight">하루 <span
+                            id="count-1">0</span>시간</h3>
+                </div>
+                <!-- X -->
+                <div class="text-3xl md:text-4xl text-gray-300 font-light hidden md:block">×</div>
+                <div class="text-3xl md:text-4xl text-gray-300 font-light md:hidden transform rotate-90">×</div>
+
+                <!-- Item 2 -->
+                <div class="text-center">
+                    <p class="text-gray-400 text-sm md:text-base mb-2 font-medium">1년이면</p>
+                    <h3 class="text-4xl md:text-6xl font-black text-dark tracking-tight"><span id="count-2">0</span>일
+                    </h3>
+                </div>
+                <!-- = -->
+                <div class="text-3xl md:text-4xl text-brand font-light hidden md:block">=</div>
+                <div class="text-3xl md:text-4xl text-brand font-light md:hidden transform rotate-90">=</div>
+
+                <!-- Result -->
+                <div class="text-center relative">
+                    <p class="text-brand text-sm md:text-base mb-2 font-bold">총 낭비되는 시간</p>
+                    <h3 class="text-5xl md:text-7xl font-black text-brand tracking-tight">매년 <span
+                            id="count-3">0</span>시간</h3>
+                </div>
             </div>
+            <p class="text-center text-gray-500 mb-12 text-lg">평생 사업에 끌려다니며, <br class="md:hidden">다음 단계로 확장할 기회를 놓치게
+                됩니다.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div
@@ -734,7 +755,7 @@
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5">
         </div>
         <div class="relative z-10 max-w-4xl mx-auto px-4">
-            <h2 class="text-4xl md:text-6xl font-black mb-8 leading-tight tracking-tight">
+            <h2 class="text-4xl md:text-6xl font-black mb-8 leading-normal tracking-tight">
                 지금 구조를 그대로 두면<br>
                 내일도 오늘과 똑같습니다.
             </h2>
@@ -804,6 +825,50 @@
                 }
             });
         }
+
+        // Initialize Step 1 as active by default
+        setActiveStep(1);
+
+        // Count Up Animation
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const count1 = document.getElementById("count-1");
+                    const count2 = document.getElementById("count-2");
+                    const count3 = document.getElementById("count-3");
+
+                    if (count1 && count2 && count3) {
+                        animateValue(count1, 0, 2, 1000);
+                        animateValue(count2, 0, 365, 1500);
+                        animateValue(count3, 0, 730, 2000);
+                        observer.unobserve(entry.target);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        const target = document.querySelector('.bg-gray-bg .flex.flex-col.md\\:flex-row'); // Target the container
+        if (target) observer.observe(target);
+
     </script>
 </body>
 
