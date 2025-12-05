@@ -460,19 +460,19 @@
                 </h2>
             </div>
             <p class="mt-6 text-2xl text-gray-600 font-medium mb-24 text-center">바로 <strong
-                    class="text-dark text-3xl">'시스템'</strong>이 없기
+                    class="text-dark text-3xl relative"><span class="relative z-10">'시스템'</span><span class="absolute bottom-1 left-0 w-full h-3 bg-brand/30 -z-0"></span></strong>이 없기
                 때문입니다.</p>
 
             <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 relative z-10 mb-16">
                 <!-- Item 1 -->
                 <div class="text-center min-w-[180px] md:min-w-[220px]">
                     <p class="text-gray-400 text-sm md:text-base mb-2 font-medium">매일 낭비되는 시간</p>
-                    <h3 class="text-4xl md:text-6xl font-black text-dark tracking-tight">하루 <span
+                    <h3 class="text-4xl md:text-6xl font-black text-dark tracking-tight">하루<br><span
                             id="count-1" class="inline-block min-w-[1.5ch] tabular-nums">0</span>시간</h3>
                 </div>
                 <!-- X -->
                 <div class="text-3xl md:text-4xl text-gray-300 font-light hidden md:block">×</div>
-                <div class="text-3xl md:text-4xl text-gray-300 font-light md:hidden transform rotate-90">×</div>
+                <div class="text-3xl md:text-4xl text-gray-300 font-light md:hidden">×</div>
 
                 <!-- Item 2 -->
                 <div class="text-center min-w-[140px] md:min-w-[180px]">
@@ -481,12 +481,12 @@
                 </div>
                 <!-- = -->
                 <div class="text-3xl md:text-4xl text-brand font-light hidden md:block">=</div>
-                <div class="text-3xl md:text-4xl text-brand font-light md:hidden transform rotate-90">=</div>
+                <div class="text-3xl md:text-4xl text-brand font-light md:hidden">=</div>
 
                 <!-- Result -->
                 <div class="text-center relative min-w-[220px] md:min-w-[280px]">
                     <p class="text-brand text-sm md:text-base mb-2 font-bold">총 낭비되는 시간</p>
-                    <h3 class="text-5xl md:text-7xl font-black text-brand tracking-tight">매년 <span
+                    <h3 class="text-5xl md:text-7xl font-black text-brand tracking-tight">매년<br><span
                             id="count-3" class="inline-block min-w-[3ch] tabular-nums">0</span>시간</h3>
                 </div>
             </div>
@@ -854,8 +854,8 @@
                     const count3 = document.getElementById("count-3");
 
                     if (count1 && count2 && count3) {
-                        animateValue(count1, 0, 2, 1000);
-                        animateValue(count2, 0, 365, 1500);
+                        animateValue(count1, 0, 2, 2000);
+                        animateValue(count2, 0, 365, 2000);
                         animateValue(count3, 0, 730, 2000);
                         observer.unobserve(entry.target);
                     }
