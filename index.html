@@ -465,30 +465,29 @@
 
             <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 relative z-10 mb-16">
                 <!-- Item 1 -->
-                <div class="text-center">
+                <div class="text-center min-w-[180px] md:min-w-[220px]">
                     <p class="text-gray-400 text-sm md:text-base mb-2 font-medium">매일 낭비되는 시간</p>
                     <h3 class="text-4xl md:text-6xl font-black text-dark tracking-tight">하루 <span
-                            id="count-1">0</span>시간</h3>
+                            id="count-1" class="inline-block min-w-[1.5ch] tabular-nums">0</span>시간</h3>
                 </div>
                 <!-- X -->
                 <div class="text-3xl md:text-4xl text-gray-300 font-light hidden md:block">×</div>
                 <div class="text-3xl md:text-4xl text-gray-300 font-light md:hidden transform rotate-90">×</div>
 
                 <!-- Item 2 -->
-                <div class="text-center">
+                <div class="text-center min-w-[140px] md:min-w-[180px]">
                     <p class="text-gray-400 text-sm md:text-base mb-2 font-medium">1년이면</p>
-                    <h3 class="text-4xl md:text-6xl font-black text-dark tracking-tight"><span id="count-2">0</span>일
-                    </h3>
+                    <h3 class="text-4xl md:text-6xl font-black text-dark tracking-tight"><span id="count-2" class="inline-block min-w-[3ch] tabular-nums">0</span>일</h3>
                 </div>
                 <!-- = -->
                 <div class="text-3xl md:text-4xl text-brand font-light hidden md:block">=</div>
                 <div class="text-3xl md:text-4xl text-brand font-light md:hidden transform rotate-90">=</div>
 
                 <!-- Result -->
-                <div class="text-center relative">
+                <div class="text-center relative min-w-[220px] md:min-w-[280px]">
                     <p class="text-brand text-sm md:text-base mb-2 font-bold">총 낭비되는 시간</p>
                     <h3 class="text-5xl md:text-7xl font-black text-brand tracking-tight">매년 <span
-                            id="count-3">0</span>시간</h3>
+                            id="count-3" class="inline-block min-w-[3ch] tabular-nums">0</span>시간</h3>
                 </div>
             </div>
             <p class="text-center text-gray-500 mb-12 text-lg">평생 사업에 끌려다니며, <br class="md:hidden">다음 단계로 확장할 기회를 놓치게
@@ -598,16 +597,14 @@
 
                     <!-- Step 1 -->
                     <div id="step-1" onclick="setActiveStep(1)"
-                        class="process-step bg-white p-8 rounded-2xl shadow-md text-left relative border border-gray-100 flex items-start hover:border-brand/20 hover:shadow-xl transition-all duration-300 cursor-pointer group">
+                        class="process-step bg-brand p-8 rounded-2xl shadow-xl text-left relative border border-brand flex items-start transition-all duration-300 cursor-pointer">
                         <div
-                            class="step-circle w-16 h-16 bg-white border-4 border-brand-light text-brand rounded-full flex items-center justify-center flex-shrink-0 mr-6 text-2xl font-black shadow-sm relative z-10 group-hover:scale-110 transition-transform duration-300">
+                            class="step-circle w-16 h-16 bg-white text-brand rounded-full flex items-center justify-center flex-shrink-0 mr-6 text-2xl font-black shadow-lg relative z-10">
                             1
                         </div>
                         <div>
-                            <h3
-                                class="step-title font-bold text-xl mb-2 text-dark group-hover:text-brand transition-colors">
-                                무료 진단</h3>
-                            <p class="step-desc text-gray-600 leading-relaxed">1시간 심층 진단으로 현재 기업의 상태를 냉정하게 체크합니다. (F등급이면
+                            <h3 class="step-title font-bold text-xl mb-2 text-white">무료 진단</h3>
+                            <p class="step-desc text-brand-light leading-relaxed">1시간 심층 진단으로 현재 기업의 상태를 냉정하게 체크합니다. (F등급이면
                                 심각)</p>
                         </div>
                     </div>
@@ -648,14 +645,14 @@
 
                     <!-- Step 4 -->
                     <div id="step-4" onclick="setActiveStep(4)"
-                        class="process-step bg-brand p-8 rounded-2xl shadow-xl text-left relative border border-brand flex items-start transition-all duration-300 cursor-pointer">
+                        class="process-step bg-white p-8 rounded-2xl shadow-md text-left relative border border-gray-100 flex items-start hover:border-brand/20 hover:shadow-xl transition-all duration-300 cursor-pointer group">
                         <div
-                            class="step-circle w-16 h-16 bg-white text-brand rounded-full flex items-center justify-center flex-shrink-0 mr-6 text-2xl font-black shadow-lg relative z-10">
+                            class="step-circle w-16 h-16 bg-white border-4 border-brand-light text-brand rounded-full flex items-center justify-center flex-shrink-0 mr-6 text-2xl font-black shadow-sm relative z-10 group-hover:scale-110 transition-transform duration-300">
                             4
                         </div>
                         <div>
-                            <h3 class="step-title font-bold text-xl mb-2 text-white">밀착 지원 (안착)</h3>
-                            <p class="step-desc text-brand-light leading-relaxed">단순 교육으로 끝나지 않습니다. 3~6개월간 적용 미팅을 통해
+                            <h3 class="step-title font-bold text-xl mb-2 text-dark group-hover:text-brand transition-colors">밀착 지원 (안착)</h3>
+                            <p class="step-desc text-gray-600 leading-relaxed">단순 교육으로 끝나지 않습니다. 3~6개월간 적용 미팅을 통해
                                 시스템이
                                 완전히 안착할
                                 때까지
